@@ -1,0 +1,60 @@
+# 🛠️ Module d'outils LAPIN
+
+fonction calculer_moyenne(nombres)
+    total = 0
+    pour chaque n dans nombres
+        total = total + n
+    fin
+    si longueur(nombres) > 0 alors
+        retourner total / longueur(nombres)
+    sinon
+        retourner 0
+    fin
+fin
+
+fonction trouver_maximum(nombres)
+    si longueur(nombres) == 0 alors
+        retourner 0
+    fin
+
+    max = nombres[0]
+    pour chaque n dans nombres
+        si n > max alors
+            max = n
+        fin
+    fin
+    retourner max
+fin
+
+fonction inverser_texte(texte)
+    resultat = ""
+    i = longueur(texte) - 1
+    tant que i >= 0
+        resultat = resultat + texte[i]
+        i = i - 1
+    fin
+    retourner resultat
+fin
+
+fonction est_premier(nombre)
+    si nombre <= 1 alors
+        retourner faux
+    fin
+
+    diviseur = 2
+    tant que diviseur * diviseur <= nombre
+        si nombre % diviseur == 0 alors
+            retourner faux
+        fin
+        diviseur = diviseur + 1
+    fin
+    retourner vrai
+fin
+
+fonction table_multiplication(n)
+    afficher "Table de multiplication de " + n
+    repeter 10 fois i
+        resultat = n * (i + 1)
+        afficher n + " × " + (i + 1) + " = " + resultat
+    fin
+fin

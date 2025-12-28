@@ -1,0 +1,74 @@
+# 🎮 Jeu Pierre-Feuille-Ciseaux en LAPIN
+
+fonction obtenir_choix_ordi()
+    choix = nombre_aleatoire(1, 3)
+    si choix == 1 alors
+        retourner "pierre"
+    sinon si choix == 2 alors
+        retourner "feuille"
+    sinon
+        retourner "ciseaux"
+    fin
+fin
+
+fonction determiner_gagnant(joueur, ordi)
+    si joueur == ordi alors
+        retourner "égalité"
+    fin
+
+    si (joueur == "pierre" et ordi == "ciseaux") ou
+       (joueur == "feuille" et ordi == "pierre") ou
+       (joueur == "ciseaux" et ordi == "feuille") alors
+        retourner "joueur"
+    sinon
+        retourner "ordinateur"
+    fin
+fin
+
+# Programme principal
+afficher "=== PIERRE-FEUILLE-CISEAUX ==="
+afficher "Règles:"
+afficher "1. Pierre bat ciseaux"
+afficher "2. Ciseaux bat feuille"
+afficher "3. Feuille bat pierre"
+
+score_joueur = 0
+score_ordi = 0
+
+repeter 3 fois tour
+    afficher ""
+    afficher "--- Tour " + tour + " ---"
+    afficher "Choisis: pierre, feuille ou ciseaux"
+
+    choix_joueur = lire
+    choix_ordi = obtenir_choix_ordi()
+
+    afficher "Toi: " + choix_joueur
+    afficher "Ordinateur: " + choix_ordi
+
+    gagnant = determiner_gagnant(choix_joueur, choix_ordi)
+
+    si gagnant == "joueur" alors
+        afficher "✅ Tu gagnes ce tour !"
+        score_joueur = score_joueur + 1
+    sinon si gagnant == "ordinateur" alors
+        afficher "❌ L'ordinateur gagne ce tour"
+        score_ordi = score_ordi + 1
+    sinon
+        afficher "🤝 Égalité !"
+    fin
+
+    afficher "Score: " + score_joueur + " - " + score_ordi
+fin
+
+afficher ""
+afficher "=== FIN DU JEU ==="
+afficher "Score final: " + score_joueur + " - " + score_ordi
+
+si score_joueur > score_ordi alors
+    afficher "🎉 TU AS GAGNÉ !"
+sinon si score_joueur < score_ordi alors
+    afficher "😢 Tu as perdu..."
+sinon
+    afficher "🤝 Match nul !"
+fin

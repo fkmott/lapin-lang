@@ -1,0 +1,17 @@
+# 🐇 TEST SIMPLE LAPIN
+afficher "Démarrage du test..."
+
+# Variables simples
+nom = "Alice"
+age = 25
+afficher "Nom: " + nom
+afficher "Âge: " + age
+
+# Calcul
+x = 10
+y = 20
+somme = x + y
+afficher "10 + 20 = " + somme
+
+# Fin
+afficher "🎉 Test réussi !"

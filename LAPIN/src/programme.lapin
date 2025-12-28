@@ -1,0 +1,89 @@
+# 🐇 PROGRAMME PRINCIPAL LAPIN
+# Un exemple complet pour démarrer
+
+afficher "🐇 Bienvenue en LAPIN !"
+afficher "Le langage de programmation le plus simple !"
+
+# Variables
+nom = "Alice"
+age = 25
+temperature = 22.5
+est_content = vrai
+
+afficher "Bonjour, je m'appelle " + nom
+afficher "J'ai " + age + " ans"
+
+# Calculs
+prix = 15.99
+quantite = 3
+total = prix * quantite
+afficher "Total: " + total + " euros"
+
+# Conditions
+si age >= 18 alors
+    afficher nom + " est majeur(e)"
+sinon
+    afficher nom + " est mineur(e)"
+fin
+
+# Boucle répéter
+afficher "Comptage:"
+repeter 5 fois
+    afficher "Hop !"
+fin
+
+# Boucle tant que
+compteur = 1
+tant que compteur <= 3
+    afficher "Tour numéro " + compteur
+    compteur = compteur + 1
+fin
+
+# Liste et boucle pour chaque
+fruits = ["pomme", "banane", "orange", "fraise"]
+afficher "Mes fruits préférés:"
+pour chaque fruit dans fruits
+    afficher "- " + fruit
+fin
+
+# Fonction
+fonction saluer(personne)
+    message = "Bonjour " + personne + " !"
+    retourner message
+fin
+
+message = saluer("Pierre")
+afficher message
+
+# Interaction
+afficher "Comment tu t'appelles ?"
+lire nom_utilisateur
+afficher "Enchanté, " + nom_utilisateur + " !"
+
+# Jeu simple
+afficher "=== JEU DE DEVINETTE ==="
+nombre_secret = nombre_aleatoire(1, 100)
+essais = 0
+
+afficher "Devine un nombre entre 1 et 100"
+
+tant que vrai
+    afficher "Ta proposition: "
+    lire_nombre proposition
+    essais = essais + 1
+
+    si proposition == nombre_secret alors
+        afficher "🎉 BRAVO ! Trouvé en " + essais + " essais"
+        afficher "Fin du jeu"
+        arrêter
+    sinon si proposition < nombre_secret alors
+        afficher "C'est PLUS !"
+    sinon
+        afficher "C'est MOINS !"
+    fin
+
+    si essais >= 10 alors
+        afficher "😢 Dommage ! Le nombre était " + nombre_secret
+        arrêter
+    fin
+fin

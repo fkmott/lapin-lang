@@ -1,0 +1,47 @@
+# 🧪 Tests basiques LAPIN
+
+afficher "Début des tests..."
+
+# Test variables
+x = 10
+y = 5
+z = x + y
+afficher "10 + 5 = " + z
+
+# Test conditions
+si z == 15 alors
+    afficher "✅ Addition correcte"
+sinon
+    afficher "❌ Erreur d'addition"
+fin
+
+# Test boucles
+somme = 0
+repeter 5 fois i
+    somme = somme + i
+fin
+afficher "Somme 0-4 = " + somme
+
+# Test liste
+nombres = [1, 2, 3, 4, 5]
+total = 0
+pour chaque n dans nombres
+    total = total + n
+fin
+afficher "Somme liste = " + total
+
+# Test fonction
+fonction multiplier(a, b)
+    retourner a * b
+fin
+
+resultat = multiplier(7, 8)
+afficher "7 × 8 = " + resultat
+
+si resultat == 56 alors
+    afficher "✅ Multiplication correcte"
+sinon
+    afficher "❌ Erreur de multiplication"
+fin
+
+afficher "Tests terminés !"
